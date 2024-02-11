@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form class="my-form" onsubmit="return validateSignUp()">
+        <div class="login-welcome-row">
+            <a href="#" title="Logo">
+                <img src="assets/storeify.png" alt="Logo" class="logo">
+            </a>
+            <h1>Sign Up &#x1F603;</h1>
+            <p>Please enter your details!</p>
+        </div>
+        <div class="input__wrapper">
+            <input type="text" id="name" name="name" class="input__field" placeholder="Your Name" required>
+            <label for="name" class="input__label">Name:</label>
+        </div>
+        <div class="input__wrapper">
+            <input type="number" id="age" name="age" class="input__field" placeholder="Your Age" required>
+            <label for="age" class="input__label">Age:</label>
+        </div>
+        <div class="input__wrapper">
+            <input type="email" id="email" name="email" class="input__field" placeholder="Your Email" required>
+            <label for="email" class="input__label">Email:</label>
+        </div>
+        <div class="input__wrapper">
+            <input id="password" type="password" name="password" class="input__field" placeholder="Your Password"
+                title="Minimum 6 characters at least 1 Alphabet and 1 Number"
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required>
+            <label for="password" class="input__label">
+                Password
+            </label>
+        </div>
+        <a href="index.html" type="submit" class="my-form__button">
+            Sign Up
+        </a>
+    </form>
+
+    <script>
+        function validateSignUp() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Check if any field is empty
+            if (!name || !age || !email || !password) {
+                alert("Please fill in all fields.");
+                return false; // Prevent form submission
+            }
+
+            // Your authentication logic here
+            // For simplicity, I'm assuming the sign-up is successful
+            alert("Sign up successful!");
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+
+</html>
